@@ -1,6 +1,9 @@
 # ProfitView browser edition: Chromium + web desktop (linuxserver) with the extension preloaded
-# CHECK(docker): pin BASE_TAG to a tested linuxserver/chromium tag before publishing, verify CHROME_CLI handling + policy path [P2]
-ARG BASE_TAG=latest
+# pinned linuxserver/chromium tag (amd64 + arm64), find a newer one with:
+#   docker buildx imagetools inspect lscr.io/linuxserver/chromium:latest --format "{{json .Image}}"
+# (the org.opencontainers.image.version label), then re-run _docker\test\run_tests.bat before pushing
+# CHECK(docker): verify CHROME_CLI handling + policy path after base tag updates [P3]
+ARG BASE_TAG=075b0b99-ls64
 FROM lscr.io/linuxserver/chromium:${BASE_TAG}
 
 COPY policies/profitview.json /etc/chromium/policies/managed/profitview.json
