@@ -1,0 +1,21 @@
+{
+  "RestoreOnStartup": 4,
+  "RestoreOnStartupURLs": ["https://www.tradingview.com/chart/"],
+  "TabDiscardingExceptions": [
+    "chrome-extension://gmflieilmcgbdepadibceklnjbjimpof/*",
+    "https://*.tradingview.com/*"
+  ],
+  "ExtensionSettings": {
+    "gmflieilmcgbdepadibceklnjbjimpof": {"toolbar_pin": "force_pinned"}
+  },
+  "HighEfficiencyModeEnabled": false,
+  "BackgroundModeEnabled": true,
+  "BrowserSignin": 0,
+  "SyncDisabled": true,
+  "TranslateEnabled": false,
+  "MetricsReportingEnabled": false,
+  "DefaultBrowserSettingEnabled": false,
+  "PromotionalTabsEnabled": false,
+  "DownloadDirectory": "/config/Downloads",
+  "PromptForDownloadLocation": false
+}

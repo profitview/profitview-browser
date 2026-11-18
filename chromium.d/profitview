@@ -1,0 +1,9 @@
+# ProfitView: sourced by Debian's /usr/bin/chromium launcher before every Chromium start (also after a crash restart)
+
+# prepare the profile: clean exit flag, developer mode, pinned icon (see prefs.py)
+/lsiopy/bin/python3 /opt/profitview/prefs.py
+
+# DisableLoadExtensionCommandLineSwitch: since Chromium 137 --load-extension is ignored unless this feature is disabled
+# the last three keep the extension's background and the inactive tabs running at full speed on the virtual display
+# (CHROME_CLI stays free for per-install additions, e.g. install.sh --dark)
+export CHROMIUM_FLAGS="$CHROMIUM_FLAGS --load-extension=/opt/profitview/ext --disable-features=ExtensionsMenuAccessControl,DisableLoadExtensionCommandLineSwitch --disable-background-timer-throttling --disable-renderer-backgrounding --disable-backgrounding-occluded-windows"
